@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-ivory: #FAF7F0;
+    --bg-ivory-light: #F3EFE6;
+    --bg-ivory-subtle: #ECE6D8;
+    --text-navy: #111E2E;
+    --text-navy-muted: #536479;
+    --text-navy-light: #7E8D9F;
+    --accent-green: #287A4C;
+    --accent-green-dark: #1E5C39;
+    --accent-green-light: #EBF4EF;
+    --border-line: rgba(17, 30, 46, 0.12);
+    --border-dashed: rgba(17, 30, 46, 0.18);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: var(--text-navy);
+    background-color: var(--bg-ivory);
+    font-family: "Pretendard Variable", "Pretendard", "IBM Plex Sans KR", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    word-break: keep-all;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--bg-ivory);
+    color: var(--text-navy);
+    line-height: 1.75;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Paper grain subtle texture (opacity under 0.035) */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: "Do Hyeon", "IBM Plex Sans KR", sans-serif;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p, li, td, th {
+    text-wrap: pretty;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.title-container {
+  container-type: inline-size;
+}
+
+.hero-dynamic-title {
+  font-size: clamp(34px, 11cqw, 88px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+/* Hide scrollbar for clean tab row on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

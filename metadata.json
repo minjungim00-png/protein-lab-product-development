@@ -1,0 +1,6 @@
+{
+  "name": "팡마니 신제품 제안 · 팡마니 1500 미니 두부 프로틴 랩",
+  "description": "10~20분 공강 시간, 삼각김밥 가격(1,500원)으로 강의실에서 냄새 없이 한 손으로 5분 만에 먹는 초가성비 고단백 또띠아 랩 신제품 기획안 및 제품 개발 제안서",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
